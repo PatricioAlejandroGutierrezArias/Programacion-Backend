@@ -1,5 +1,5 @@
 """
-URL configuration for holamundo project.
+URL configuration for Proyecto_1 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,14 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from holamundo import views
+from proyecto_app1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.saludo),
-    path('adios/', views.adios),
-    path('saludo/', views.chao2),
-    path('verhora/', views.horaactual),
-    path('edad/<int:anio>', views.calculo),
-    path('edad2/<int:edad>/<int:anio>', views.calcularedad)
+    path('ver/', views.usotemplate),
+    path('info/', views.infousuario)
 ]
