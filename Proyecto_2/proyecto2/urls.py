@@ -20,6 +20,6 @@ from proyecto2_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
-    path('electronica/', views.producto)
+    path('', views.index, name='index'),
+    path('producto/', views.producto, name='producto')
 ]
