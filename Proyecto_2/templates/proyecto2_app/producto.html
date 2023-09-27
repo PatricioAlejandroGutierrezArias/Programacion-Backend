@@ -7,16 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Django Shopping</title>
 </head>
 <body class="container mt-5">
-    <div class="alert alert-info text-center display-1">DJANGO SHOPING</div>
+    <div class="alert alert-info text-center display-1"><img src="{% static 'img/LogoDjango.png' %}" alt="" width="150px">DJANGO SHOPING</div>
     <div class="alert alert-dark text-center">{{titulo}}</div>
     <div class="row">
-        <div class="col"><a href="#" class="btn btn-success w-100"><img src="{%static 'img/'%}{{foto1}}" alt="" width="100px">{{producto1}}</a></div><br>
-        <div class="col"><a href="#" class="btn btn-success w-100"><img src="{%static 'img/'%}{{foto2}}" alt="" width="100px">{{producto2}}</a></div><br>
-        <div class="col"><a href="#" class="btn btn-success w-100"><img src="{%static 'img/'%}{{foto3}}" alt="" width="100px">{{producto3}}</a></div><br>
-    </div>
+        <div class="col"><a href="#" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto1}}" alt=""  width="100px"><br>{{producto1}}</a></div>
+        <div class="col"><a href="#" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto2}}" alt=""  width="100px"><br>{{producto2}}</a></div>
+        <div class="col"><a href="#" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto3}}" alt="" class="img-fluid" width="100px"><br>{{producto3}}</a></div>
+    </div><br>
     <a href="{% url 'index' %}" class="btn btn-info"><i class="bi bi-chevron-double-left"></i>Volver</a>
 </body>
 </html>
