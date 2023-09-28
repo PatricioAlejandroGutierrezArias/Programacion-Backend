@@ -23,13 +23,13 @@
     <div class ='alert alert-dark text-center'>{{titulo}}</div>
     <div class="row text-light" >
       <h1>Informacion Usuario </h1>
-      <ol>
+      <ul>
         <img src="{% static 'img/programador.png' %}" alt="" width="100px">
           <li>Nombre : {{nombre}}</li>
           <li>Apellidos : {{apellido}}</li>
           <li>id : {{ID}}</li>
           <li>email : {{email}}</li>
-      </ol>
+      </ul>
     </div><br>
     <a href="{% url 'index' %}"class="btn btn-info"><i class="bi bi-chevron-double-left"></i>Volver</a>
     
