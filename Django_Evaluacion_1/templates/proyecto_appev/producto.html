@@ -22,10 +22,32 @@
     <div class="alert alert-warning text-center display-2"><img src="{% static 'img/Logo.png' %}" alt="" width="100px">Instrumentos Musicales</div>
     <div class ='alert alert-dark text-center'>{{titulo}}</div>
     <div class="row">
-        <div class="col " ><a href="{% url 'descripcion' categoria producto1 %}" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto1}}"  alt=""  width="100px"><br>{{producto1}}</a></div>
-        <div class="col " ><a href="{% url 'descripcion' categoria producto2 %}" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto2}}"  alt=""  width="100px"><br>{{producto2}}</a></div>
-        <div class="col " ><a href="{% url 'descripcion' categoria producto3 %}" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto3}}"  alt=""  width="100px"><br>{{producto3}}</a></div>
-    </div><br>
+      <div class="col-md-4">
+          <div class="card m-5">
+              <a href="{% url 'descripcion' categoria producto1 %}" class="btn btn-success d-flex flex-column align-items-center">
+                  <img src="{%static 'img/'%}{{foto1}}" alt="" class="img-fluid" style="max-height: 150px;">
+                  <span class="mt-2">{{producto1}}</span>
+              </a>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card m-5">
+              <a href="{% url 'descripcion' categoria producto2 %}" class="btn btn-success d-flex flex-column align-items-center">
+                  <img src="{%static 'img/'%}{{foto2}}" alt="" class="img-fluid" style="max-height: 150px;">
+                  <span class="mt-2">{{producto2}}</span>
+              </a>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card m-5">
+              <a href="{% url 'descripcion' categoria producto3 %}" class="btn btn-success d-flex flex-column align-items-center">
+                  <img src="{%static 'img/'%}{{foto3}}" alt="" class="img-fluid" style="max-height: 150px;">
+                  <span class="mt-2">{{producto3}}</span>
+              </a>
+          </div>
+      </div>
+  </div>
+  
     <a href="{% url 'index' %}"class="btn btn-info"><i class="bi bi-chevron-double-left"></i>Volver</a>
     
 </body>
