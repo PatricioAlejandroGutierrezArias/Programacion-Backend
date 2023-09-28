@@ -20,5 +20,9 @@ from proyecto_appev import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('viento/', views.Viento, name='viento'),
+    path('cuerda/', views.Cuerda, name='cuerda'),
+    path('percusion/', views.Percusion, name='percusion'),
+    path('usuario/', views.Usuario, name='usuario')
 ]

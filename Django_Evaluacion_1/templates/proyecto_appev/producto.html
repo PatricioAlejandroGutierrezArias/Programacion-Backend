@@ -19,13 +19,13 @@
 </head>
 <body class="container">
     <div class="alert alert-warning text-center display-1"><img src="{% static 'img/Logo.png' %}" alt="" width="100px">Tu musica</div>
+    <div class ='alert alert-dark text-center'>{{titulo}}</div>
     <div class="row">
-        <div class="col"><a href="{% url 'viento' %}" class="btn btn-info w-100 p-3">Viento</a></div>
-        <div class="col"><a href="{% url 'cuerda' %}" class="btn btn-danger w-100 p-3">Cuerda</a></div>
-        <div class="col"><a href="{% url 'percusion' %}" class="btn btn-warning w-100 p-3">Percusion</a></div>
-        <div class="col"><a href="{% url 'usuario' %}" class="btn btn-success w-100 p-3">Usuario</a></div>
-    </div>
-    
+        <div class="col"><a href="#" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto1}}" alt=""  width="100px"><br>{{producto1}}</a></div>
+        <div class="col"><a href="#" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto2}}" alt=""  width="100px"><br>{{producto2}}</a></div>
+        <div class="col"><a href="#" class="btn btn-success text-center"><img src="{%static 'img/'%}{{foto3}}" alt=""  width="100px"><br>{{producto3}}</a></div>
+    </div><br>
+    <a href="{% url 'index' %}"class="btn btn-info"><i class="bi bi-chevron-double-left"></i>Volver</a>
     
 </body>
 </html>
