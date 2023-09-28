@@ -42,10 +42,10 @@ def Percusion(request):
 
 def Usuario(request):
     data = {    "titulo": "Usuario",
-                "nombre" :"Juan",
-                "apellido" :"Perez",
-                "email" :"",
-                "telefono" :"",
+                "ID" :"123",
+                "nombre" :"Patricio Alejandro",
+                "apellido" :"Gutiérrez Arias",
+                "email" :"patricio.gutierrez@inacapmail.cl",
                 "foto1":"usuario1.jpg"
                 }
     return render(request, 'proyecto_appev/usuario.html',data)
