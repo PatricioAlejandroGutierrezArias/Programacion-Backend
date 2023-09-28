@@ -24,5 +24,8 @@ urlpatterns = [
     path('viento/', views.Viento, name='viento'),
     path('cuerda/', views.Cuerda, name='cuerda'),
     path('percusion/', views.Percusion, name='percusion'),
-    path('usuario/', views.Usuario, name='usuario')
+    path('usuario/', views.Usuario, name='usuario'),
+    path('descripcion/<str:categoria>/<str:producto>', views.Descripcion, name='descripcion'),
+    path('descripcion/<str:categoria>/<str:producto>', views.Descripcion, name='descripcion'),
+    path('descripcion/<str:categoria>/<str:producto>', views.Descripcion, name='descripcion')
 ]

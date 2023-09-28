@@ -6,6 +6,7 @@ def index(request):
 
 def Viento(request):
     data = {    "titulo": "Viento",
+                "categoria" :"viento",
                 "producto1" :"Flauta",
                 "producto2" :"Tuba",
                 "producto3" :"Clarinete",
@@ -17,6 +18,7 @@ def Viento(request):
 
 def Cuerda(request):
     data = {    "titulo": "Cuerda",
+                "categoria" :"cuerda",
                 "producto1" :"Guitarra",
                 "producto2" :"Violin",
                 "producto3" :"VIolonchelo",
@@ -28,6 +30,7 @@ def Cuerda(request):
 
 def Percusion(request):
     data = {    "titulo": "Percusion",
+                "categoria" :"percusion",
                 "producto1" :"Bateria",
                 "producto2" :"Tambor",
                 "producto3" :"Pandereta",
@@ -38,7 +41,7 @@ def Percusion(request):
     return render(request, 'proyecto_appev/producto.html',data)
 
 def Usuario(request):
-    data = {    "Titulo": "Usuario",
+    data = {    "titulo": "Usuario",
                 "nombre" :"Juan",
                 "apellido" :"Perez",
                 "email" :"",
@@ -47,3 +50,29 @@ def Usuario(request):
                 }
     return render(request, 'proyecto_appev/usuario.html',data)
 
+
+
+def Descripcion(request,categoria,producto):
+    descripciones = {
+        "viento":{"Flauta":"La flauta y la ...... ",
+                     "Tuba":"La tuba y la ...... ",
+                     "Clarinete":"El clarinete y la ...... "},
+        "cuerda":{  "Guitarra":"La guitarra y la ...... ",
+                    "Violin":"El violin y la ...... ",
+                    "VIolonchelo":"El violonchelo y la ...... "},
+        "percusion":{   "Bateria":"La bateria y la ...... ",
+                        "Tambor":"El tambor y la ...... ",
+                        "Pandereta":"La pandereta y la ...... "}
+    }
+    
+    descripcion = descripciones.get(categoria, {}).get(producto, "descripcion no encontrada")
+
+    
+    data = {    "titulo": "Descripcion",
+                "categoria" : categoria,
+                "producto" : producto,
+                "descripcion" : descripcion
+                
+                
+                }
+    return render(request, 'proyecto_appev/descripcion.html',data)
