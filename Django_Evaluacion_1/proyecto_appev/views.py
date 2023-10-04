@@ -45,6 +45,7 @@ def Usuario(request):
                 "ID" :"123",
                 "nombre" :"Patricio Alejandro",
                 "apellido" :"Gutiérrez Arias",
+                "telefono" :"+569 12345678",
                 "email" :"patricio.gutierrez@inacapmail.cl",
                 "foto1":"usuario1.jpg"
                 }
