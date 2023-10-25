@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'proyecto_4_app'
 ]
 
 MIDDLEWARE = [
@@ -73,10 +74,17 @@ WSGI_APPLICATION = 'Proyecto_4.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
+import pymysql 
+
+pymysql.install_as_MySQLdb
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_ap77',
+        'user': 'root',
+        'PASSWORD': 'root'
     }
 }
 
