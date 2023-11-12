@@ -12,6 +12,9 @@ class Artista(models.Model):
     class Meta:
         managed = False
         db_table = 'artista'
+        
+    def __str__(self):
+        return self.nom_artista
 
 
 class Canciones(models.Model):
@@ -26,6 +29,9 @@ class Canciones(models.Model):
     class Meta:
         managed = False
         db_table = 'canciones'
+        
+    def __str__(self):
+        return self.cancion
 
 
 class Country(models.Model):
@@ -57,6 +63,9 @@ class Estilo(models.Model):
     class Meta:
         managed = False
         db_table = 'estilo'
+        
+    def __str__(self):
+        return self.nom_estilo
 
 
 class Genero(models.Model):
@@ -66,6 +75,9 @@ class Genero(models.Model):
     class Meta:
         managed = False
         db_table = 'genero'
+        
+    def __str__(self):
+        return self.nom_Genero
 
 
 class Nacionalidad(models.Model):
@@ -75,5 +87,8 @@ class Nacionalidad(models.Model):
     class Meta:
         managed = False
         db_table = 'nacionalidad'
+        
+    def __str__(self):
+        return self.nom_nacion
         
 
