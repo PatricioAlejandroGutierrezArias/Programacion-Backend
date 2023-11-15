@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from proyecto_4_app.models import Empleados
+from . import forms
 
 # Create your views here.
 def listaempleados(request):
@@ -11,4 +12,6 @@ def index(request):
     return render(request, 'index.html')
 
 def registro(request):
-    return render(request, 'registro.html')
+    form = forms.registroempleados()
+    data = {'formss': form}
+    return render(request, 'registro.html',data)
