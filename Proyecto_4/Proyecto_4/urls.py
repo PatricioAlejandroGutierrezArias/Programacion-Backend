@@ -21,5 +21,6 @@ from proyecto_4_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('empleados/', views.listaempleados),
-    path('', views.index)
+    path('', views.index),
+    path('registro/', views.registro)
 ]
