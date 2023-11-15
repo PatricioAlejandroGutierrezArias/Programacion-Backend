@@ -21,7 +21,7 @@ from ProyectoNW import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('artistas/',views.artistas)
+    path('artistas/',views.artistas, name='artistas')
     
 
 ]

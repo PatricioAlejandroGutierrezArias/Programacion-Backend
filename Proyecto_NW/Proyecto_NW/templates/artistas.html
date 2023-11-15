@@ -14,30 +14,97 @@
   <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
-  <div class="container mt-5 text-center">
-    <h1 class="mb-4">Artistas</h1>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Género</th>
-          <th>Año Nacimiento</th>
-          <th>País</th>
-          <th>Estilo</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for art in artistas %}
-        <tr>
-          <td>{{ art.nom_artista }}</td>
-          <td>{{ art.Id_Genero.nom_Genero}}</td>
-          <td>{{ art.anno_nac }}</td>
-          <td>{{ art.Id_nacion.nom_nacion }}</td>
-          <td>{{ art.Id_Estilo.nom_estilo }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+
+  <div class="container bg-white my-3">
+
+    <div class="row" >
+      <div class="col-sm-8 col-md-4 col-lg-4 col-xl-4">
+        <h4 class="nuevo">Nuevo Artista</h4>
+        <div class="container">
+       <div class="row">
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-success btn-xxl col-3" data-bs-toggle="modal" data-bs-target="#agregarartista">
+  <i>Nuevo
+</button></i>
+
+<!-- Modal -->
+<div class="modal fade" id="agregarartista" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="agregarartistatitulo" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" id="agregar">
+        <h5 class="modal-title " id="agregarartista">Agregar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="" class="ps-2 pe-4">
+          <div class="mb-3">
+            <label for="txt_descripcion_artista" class="form-label">Nombre Artista</label>
+            <input type="text" class="form-control campoTexto" id="txt_descripcion_artista" placeholder="Nombre Artista">
+          </div>
+          <div class="mb-3">
+            <label for="txt_genero" class="form-label">Género</label>
+            <input type="text" class="form-control campoTexto" id="txt_genero" placeholder="Género"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_anho_creacion" class="form-label">Año Creación</label>
+            <input type="number" class="form-control campoNumerico" id="txt_anho_creacion" placeholder="Año Creación"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_pais" class="form-label">Pais</label>
+            <input type="text" class="form-control campoTexto" id="txt_pais" placeholder="Pais"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_estilo" class="form-label">Estilo</label>
+            <input type="text" class="form-control campoTexto" id="txt_estilo" placeholder="Estilo"></input>
+          </div>
+     
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success" onclick="agregarProducto()" data-bs-dismiss="modal">Agregar</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+           
+
+       </div>
+
+
+    </div>
+  </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h4 class="titulo text-center">Artistas</h4>
+        <table class="table table-hover table-light">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Género</th>
+              <th>Año Creación</th>
+              <th>País</th>
+              <th>Estilo</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for art in artistas %}
+            <tr>
+              <td>{{ art.nom_artista }}</td>
+              <td>{{ art.Id_Genero.nom_Genero}}</td>
+              <td>{{ art.anno_nac }}</td>
+              <td>{{ art.Id_nacion.nom_nacion }}</td>
+              <td>{{ art.Id_Estilo.nom_estilo }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div  >
   </div>
   
   
