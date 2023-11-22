@@ -10,13 +10,31 @@
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body class="container mt5">
-    <div class="alert alert-success display-5 text-center">
-        SISTEMA PROYECTO 6      
+    <div class="alert alert-success display-1 text-center">
+        Registro Nuevo      
     </div>
-        <a href="/proyecto" class="btn btn-success">Listado</a>
+    
+    <form method="POST">
+        <table class="table text-center">
+            {{formss.as_table}}
+            
+        <tr>
+            <td>
+                <input type="submit" value="Guardar" class="btn btn-warning">
+            </td>
+            <td>
+                <a href="/proyecto" class="btn btn-success">Volver</a>
+            </td>
+        </tr>
+        </table>
+        
 
-        <a href="/registro" class="btn btn-warning">Agregar</a>
+    </form>
 
 
+
+    
+    
+ 
 </body>
 </html>

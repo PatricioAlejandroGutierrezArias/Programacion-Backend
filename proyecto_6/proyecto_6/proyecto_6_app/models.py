@@ -10,3 +10,4 @@ class Proyecto(models.Model):
     
     class Meta:
         db_table = 'proyecto'
+

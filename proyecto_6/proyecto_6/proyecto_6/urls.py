@@ -21,6 +21,7 @@ from proyecto_6_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('proyecto/',views.listadoproyecto, name='listadoproyecto')
+    path('proyecto/',views.listadoproyecto, name='listadoproyecto'),
+    path('registro/',views.registro, name='registro')
     
 ]

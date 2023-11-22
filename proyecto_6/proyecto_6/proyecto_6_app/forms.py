@@ -1,16 +1,19 @@
+from typing import Any
 from django import forms
 from django.core import validators
 
-class FormName(forms.Form):
-    name = forms.CharField()
-    email = forms.EmailField()
-    verify_email = forms.EmailField(label='Ingrese su email nuevamente')
-    text = forms.CharField(widget=forms.Textarea)
+class registros(forms.Form):
+    fechaInicio = forms.DateField()
+    fechaTermino = forms.DateField()
+    nombre = forms.CharField()
+    responsable= forms.CharField()
+    prioridad = forms.IntegerField()
     
-    def clean(self):
-        all_clean_data = super().clean()
-        email = all_clean_data['email']
-        vmail = all_clean_data['verify_email']
-        
-        if email != vmail:
-            raise forms.ValidationError("Asegurese que los emails coincidan")
+    class Meta:
+        db_table = 'proyecto'
+   
+    fechaInicio.widget.attrs['class'] = 'form-control'
+    fechaTermino.widget.attrs['class'] = 'form-control'
+    nombre.widget.attrs['class'] = 'form-control'
+    responsable.widget.attrs['class'] = 'form-control'
+    prioridad.widget.attrs['class'] = 'form-control'
