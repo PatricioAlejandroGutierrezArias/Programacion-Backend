@@ -17,6 +17,7 @@
     <form method="POST">
         <table class="table text-center">
             {{formss.as_table}}
+            {% csrf_token %}
             
         <tr>
             <td>

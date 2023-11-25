@@ -1,19 +1,10 @@
 from typing import Any
 from django import forms
+from . import models 
 from django.core import validators
 
-class registros(forms.Form):
-    fechaInicio = forms.DateField()
-    fechaTermino = forms.DateField()
-    nombre = forms.CharField()
-    responsable= forms.CharField()
-    prioridad = forms.IntegerField()
-    
+class registros(forms.ModelForm):
     class Meta:
-        db_table = 'proyecto'
-   
-    fechaInicio.widget.attrs['class'] = 'form-control'
-    fechaTermino.widget.attrs['class'] = 'form-control'
-    nombre.widget.attrs['class'] = 'form-control'
-    responsable.widget.attrs['class'] = 'form-control'
-    prioridad.widget.attrs['class'] = 'form-control'
+        model = models.Proyecto
+        fields = '__all__'
+        
