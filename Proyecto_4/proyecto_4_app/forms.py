@@ -2,7 +2,10 @@ from django import forms
 from django.core import validators
 
 class registroempleados(forms.Form):
-    ESTADOS = [{'activos','ACTIVOS'},{'inactivos','INACTIVOS'},{'bloqueado','BLOQUEADOS'}]
+    ESTADOS = [
+        {'activos','ACTIVOS'},
+        {'inactivos','INACTIVOS'},
+        {'bloqueado','BLOQUEADOS'}]
     
     nombre= forms.CharField(validators =[validators.MinLengthValidator(5),validators.MaxLengthValidator(20)])
     email= forms.EmailField(widget=forms.EmailInput)

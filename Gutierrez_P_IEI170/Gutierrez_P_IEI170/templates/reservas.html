@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Reservas</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body class="container mt-5">
+    <div class="alert alert-success display-5 text-center">
+        Listado de reservas   
+    </div>
+
+    {% if reservas %}
+
+    <table class="table table-responsive table-striped table-hover text-center align-middle">
+        <thead class="align-middle">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Fecha Reserva</th>
+                <th>Hora</th>
+                <th>Cantidad Personas</th>
+                <th>Email</th>
+                <th>Estado</th>
+                <th>Observaciones</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reser in reservas %}
+            <tr>
+                <td>{{reser.ID}}</td>
+                <td>{{reser.nombre}}</td>
+                <td>{{reser.telefono}}</td>
+                <td>{{reser.fecha}}</td>
+                <td>{{reser.hora}}</td>
+                <td>{{reser.cantidad_personas}}</td>
+                <td>{{reser.email}}</td>
+                <td>{{reser.estado}}</td>
+                <td>{{reser.observacion}}</td>
+                <td class="container">
+                    <a href="/modificar/{{reser.ID}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                    <a href="/eliminar/{{reser.ID}}" class="btn btn-danger btn-sm"><i class="bi bi-trash3"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
+
+        <a href="/" class="btn btn-success">Volver</a>
+
+        
+
+
+</body>
+</html>
