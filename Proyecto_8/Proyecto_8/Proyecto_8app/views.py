@@ -19,3 +19,29 @@ def estudiantes_list(request):
             serial.save()
             return Response(serial.data, status=status.HTTP_201_CREATED)
         return Response(serial.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+# Crear el update y el delete
+@api_view(['GET', 'PUT', 'DELETE'])
+def estudiantes_detail(request, pk):
+    try:
+        estudi = Estudiantes.objects.get(pk=pk)
+    except Estudiantes.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+    if request.method == 'GET':
+        estudi = Estudiantes.objects.filter(id=pk).first()
+        serial = EstudiantesSerializer(estudi)
+        return Response(serial.data)
+    
+    elif request.method == 'PUT':
+        estudi = Estudiantes.objects.filter(id=pk).first()
+        serial = EstudiantesSerializer(estudi, data=request.data)
+        if serial.is_valid():
+            serial.save()
+            return Response(serial.data)
+        return Response(serial.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    elif request.method == 'DELETE':
+        estudi = Estudiantes.objects.filter(id=pk).first()
+        estudi.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
