@@ -5,7 +5,7 @@ from django.db import models
 class Participantes(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=80)
-    telefono = models.IntegerField(max_length=10)
+    telefono = models.IntegerField()
     fecha_inscripcion = models.DateField()
     hora_inscripcion = models.TimeField()
     institucion = models.CharField(max_length=50)
