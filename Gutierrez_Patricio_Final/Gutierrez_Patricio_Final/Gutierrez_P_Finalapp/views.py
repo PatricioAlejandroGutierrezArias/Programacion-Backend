@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework import status
@@ -18,7 +18,7 @@ def registroparticipantes(request):
         form = forms.ParticipantesForm(request.POST)
         if form.is_valid():
             form.save()
-            return index(request)
+            return redirect('/registroparticipantes')
         else:
             print('Error en el formulario')
     data = {'formss': form}
@@ -30,7 +30,7 @@ def registroinstituciones(request):
         form = forms.InstitucionesForm(request.POST)
         if form.is_valid():
             form.save()
-            return index(request)
+            return redirect('/registroinstituciones')
         else:
             print('Error en el formulario')
     data = {'formss': form}
