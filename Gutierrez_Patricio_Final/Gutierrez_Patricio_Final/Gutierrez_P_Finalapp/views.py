@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
-from django.http import Http404
+from django.http import Http404, JsonResponse
 
 from . import forms
 
@@ -45,7 +45,7 @@ class AutorProyectoDetail(APIView):
             "carrera": autor.carrera,
             "correo": autor.correo,
         }
-        return Response(data)
+        return JsonResponse(data)
     
  #Class Based Views para el Modelo Inscritos
  
