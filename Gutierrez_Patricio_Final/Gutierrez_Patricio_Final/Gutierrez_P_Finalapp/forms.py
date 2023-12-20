@@ -5,6 +5,7 @@ from django.core import validators
 
 class ParticipantesForm(forms.ModelForm):
      ESTADOS = [
+         ('---------', '---------'),
         ('reservado', 'Reservado'),
         ('completada', 'Completada'),
         ('anulada', 'Anulada'),
